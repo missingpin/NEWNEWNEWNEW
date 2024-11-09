@@ -1,0 +1,392 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101D;
+  padding: 6px 14px;
+  z-index: 1000;
+  transition: all 0.5s ease;
+}
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 78px; /* Adjust this according to the sidebar width */
+    height: 60px; /* Height of the topbar */
+    width: calc(100% - 78px); /* Full width minus sidebar */
+    background: #11101D; /* Topbar background color */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: flex-end; /* Align items to the right */
+    padding: 0 20px; /* Padding for content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 999; /* Ensure it’s above other content */
+  }
+  .dropdown-menu {
+    position: absolute; /* Keeps it below the user icon */
+    top: 100%; /* Position it directly below the user icon */
+    left: 0; /* Align it to the left */
+    width: 100px; /* Set a proper width */
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    z-index: 1001; /* Ensure it appears above other elements */
+    display: none; /* Initially hidden */
+    box-sizing: border-box; /* Include padding and border in the total width/height */
+    padding-right: 500px;
+}
+
+.dropdown-menu a {
+    display: block;
+    font-size: 12px; /* Smaller font size */
+    padding: 5px 5px; /* Adjusted padding for less space */
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+.topbar .user-info {
+margin-right: 20px; 
+  color: #fff;
+}
+.sidebar.open{
+  width: 250px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.profile-img {
+  width: 40px;             /* Set the width */
+  height: 40px;            /* Set the height */
+  clip-path: circle(50%);  /* Clip the image into a circle */
+  object-fit: cover;       /* Ensure the image covers the circular area */
+}
+
+.sidebar i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar.open li .tooltip{
+  display: none;
+}
+.sidebar input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+.sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar .bx-search{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  background: #1d1b31;
+  color: #FFF;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #11101D;
+}
+.sidebar li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #11101D;
+}
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.sidebar li.profile{
+  position: fixed;
+  height: 60px;
+  width: 78px;
+  left: 0;
+  bottom: -8px;
+  padding: 10px 14px;
+  background: #1d1b31;
+  transition: all 0.5s ease;
+  top: 580px;
+  overflow: hidden;
+}
+.sidebar.open li.profile{
+  width: 250px;
+}
+.sidebar li .profile-details{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  
+}
+.sidebar li img{
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+.sidebar li.profile .name,
+.sidebar li.profile .job{
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  white-space: nowrap;
+}
+.sidebar li.profile .job{
+  font-size: 12px;
+}
+.sidebar .profile #log_out {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: #1d1b31;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 0px;
+  transition: all 0.5s ease;
+}
+.sidebar.open .profile #log_out{
+  width: 50px;
+  background: none;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i {
+  color: gray; /* Set text color to gray on hover */
+}
+.home-section{
+  position: relative;
+  background: #E4E9F7;
+  min-height: 100vh;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+.sidebar.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 250px);
+}
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark background */
+    z-index: 1; /* Make sure it’s behind the sidebar */
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Initially hidden */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Fade transition */
+}
+
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+    --alert-bg-color: #f8f9fa; /* Background color for the alert */
+    --alert-text-color: #11101D; /* Text color */
+    --alert-link-color: #11101D; /* Link color */
+    --alert-border-radius: 8px; /* Border radius for alerts */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --alert-bg-color: #f8f9fa; /* Background color for the alert */
+  --alert-text-color: #000; /* Set text color to black */
+  --alert-link-color: #000; /* Set link color to black */
+  --alert-border-radius: 8px; /* Border radius for alerts */
+}
+
+.alert-container {
+  position: fixed; /* Keep it fixed in position */
+  top: 60px; /* Just below the topbar */
+  right: 20px; /* Adjust spacing from the right */
+  background-color: var(--alert-bg-color); /* Use CSS variable */
+  border-radius: var(--alert-border-radius); /* Use CSS variable */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+  width: 290px; /* Set a smaller width */
+  padding: 15px; /* Adjust padding for a more compact look */
+  z-index: 1002; /* Above the sidebar */
+  display: none; /* Hidden by default */
+  color: var(--alert-text-color); /* Use CSS variable for text color */
+}
+
+.low-stock-alerts {
+  max-height: 200px; /* Reduce height limit */
+  overflow-y: auto; /* Scroll if there are too many alerts */
+}
+
+/* WebKit Scrollbar Styling */
+.low-stock-alerts::-webkit-scrollbar {
+  width: 8px; /* Thinner scrollbar width */
+}
+
+.low-stock-alerts::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Track color */
+  border-radius: 8px; /* Rounded track */
+}
+
+.low-stock-alerts::-webkit-scrollbar-thumb {
+  background: #888; /* Scrollbar color */
+  border-radius: 8px; /* Rounded thumb */
+}
+
+.low-stock-alerts::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker color on hover */
+}
+
+
+
+.low-stock-alerts .alert {
+  margin-bottom: 10px; /* Space between alerts */
+  color:rgb(0, 0, 0); /* Set alert text color to black */
+  background-color: #ffffff;
+  border-color: #FFF;
+}
+
+.go-to-alerts {
+  display: block; /* Make the link a block element */
+  text-align: center; /* Center the text */
+  margin-top: 10px; /* Space above the link */
+  color: var(--alert-link-color); /* Use CSS variable */
+  cursor: pointer; /* Indicate it's interactable */
+  text-decoration: none; /* Remove underline */
+}
+
+.go-to-alerts:hover {
+  text-decoration: underline; /* Underline on hover */
+}

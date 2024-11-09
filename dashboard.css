@@ -1,0 +1,160 @@
+h1 {
+    text-align: center;
+    margin-top: 7%;
+}
+
+body {
+    overflow: hidden; /* Disable scrolling */
+}
+
+/* Create a container for the frames and recent activities */
+.container {
+    display: flex;
+    flex-direction: row; /* Align horizontally */
+    gap: 30px; /* Space between frames */
+    padding-left: 30px; /* Optional: Padding for left spacing */
+    align-items: flex-start; /* Align all items at the top */
+}
+
+.recent-activities-box {
+    position: absolute; /* Allow free movement */
+    top: 20px;  /* Initial top position */
+    right: 20px;  /* Initial right position */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 145px;
+    margin-right: 40px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.recent-activities-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.recent-activities-content {
+    font-size: 14px;
+}
+
+.recent-activities-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.recent-activities-content li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Frames for Total Products, Categories, and Quantity */
+.frame {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 15px;
+    margin-top: 3%;
+    margin-left: 7px;
+    width: 150px; /* Consistent width */
+    height: 60px; /* Consistent height */
+    background: rgb(197, 197, 197);
+    border-bottom: 3px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.total-products {
+    border-color: #001D6C; /* Dark Blue */
+}
+
+.total-categories {
+    border-color: #D2691E; /* Chocolate */
+}
+
+.overall-quantity {
+    border-color: #228B22; /* Forest Green */
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+}
+
+.header-text {
+    color: gray;
+    font-size: 9px; /* Reduced font size */
+}
+
+.number {
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* Status Box */
+.status-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #D1D0D0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    height: 70px;
+    margin-top: 35px;
+    margin-left: 150px;
+}
+
+.squares-and-total {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    gap: 20px;
+}
+
+.usage-square, .total-square {
+    display: flex;
+    flex-direction: row;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.label {
+    font-size: 12px;
+}
+
+.rnumber {
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+}
+
+.low-stock {
+    border-left: 5px solid #D2691E; /* Chocolate color */
+    padding-left: 10px;
+}
+
+.about-to-expire {
+    border-left: 5px solid #FF4500; /* Orange Red color */
+    padding-left: 10px;
+}
+
+.no-stock {
+    border-left: 5px solid #001D6C; /* Dark Blue color */
+    padding-left: 10px;
+}
+
+canvas {
+    width: 60px !important;
+    height: 60px !important;
+}

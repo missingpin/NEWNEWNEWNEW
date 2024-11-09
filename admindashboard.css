@@ -1,0 +1,37 @@
+
+.header{
+    margin: 200px 0 125px 7px;
+  font-family: 'Newsreader';
+  font-size: 50px;
+  text-align: center;
+  color: #fffb00;
+}
+footer{
+    text-align: right;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+.Table-List{
+    color: #000000;
+    text-align: center;
+}
+.contents{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 20px;
+    width: 100%;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+.table-info{
+    color: #ffffff;
+    background-color: #000000;
+    text-indent: 50px;
+}
+.test{
+    background-color: #ffffff;
+    color: #000000;
+    text-indent: 50px;
+}
+.logout{
+    padding-left: 10px;
+}
